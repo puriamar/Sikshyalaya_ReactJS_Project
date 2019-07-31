@@ -42,3 +42,10 @@ code {
 #subject-list {
   margin-top: 10px;
 }
+#clickables_subjectlist {
+  cursor: pointer;
+}
+#clickables_subjectlist:hover {
+  background: lightgrey;
+  transition: all 0.8s;
+}

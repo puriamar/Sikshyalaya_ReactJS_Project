@@ -9,7 +9,6 @@ class Home extends Component {
   };
 
   onClick = value => {
-    console.log(value);
     this.props.history.push("/School/" + value);
   };
   render() {

@@ -20,10 +20,6 @@ export default function SpacingGrid(props) {
   const [spacing] = React.useState(2);
   const classes = useStyles();
   const { value, onClick } = props;
-  // const handleClick = label => {
-  //   console.log(props);
-  //   console.log("clicked");
-  // };
 
   return (
     <Grid container className={classes.root} spacing={2}>

@@ -6,6 +6,7 @@ import Home from "./components/Home";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import Notfound from "./Notfound";
+import School from "./components/school";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/registerform" component={RegisterForm} /> */}
 
           <Route path="/Home" component={Home} />
+          <Route path="/School/:name" component={School} />
           <Route path="/About" component={About} />
           <Route path="/Contact" component={Contact} />
           <Route path="/not-found" component={Notfound} />

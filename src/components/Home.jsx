@@ -5,7 +5,11 @@ import Button from "./Buttons";
 
 class Home extends Component {
   state = {
-    value: [{ id: 0, label: "School" }, { id: 1, label: "High-School" }]
+    value: [
+      { id: 0, label: "School" },
+      { id: 1, label: "High-School" }
+      // { id: 2, label: "Undergrad" }
+    ]
   };
 
   onClick = value => {

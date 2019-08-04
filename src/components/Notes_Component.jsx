@@ -1,11 +1,17 @@
 import React, { Component } from "react";
 import Tabs from "./tabs";
+import List from "./list_group";
+import Quiz from "./quiz";
 
 class Notes extends Component {
-  state = { current_lesson: this.props.lessons[0] };
+  state = {
+    current_lesson: this.props.lessons[0]
+  };
+
   handleChange = lesson => {
     this.setState({ current_lesson: lesson });
   };
+
   render() {
     const { lessons } = this.props;
 
@@ -13,24 +19,17 @@ class Notes extends Component {
       <div className="row">
         <div className="col-2">
           <h3>Lessons</h3>
-          <ul className="list-group">
-            {lessons.map(a => (
-              <li
-                onClick={() => this.handleChange(a)}
-                key={a.topic}
-                className={
-                  a === this.state.current_lesson
-                    ? "list-group-item active"
-                    : "list-group-item"
-                }
-              >
-                {a.topic}
-              </li>
-            ))}
-          </ul>
+          <List
+            lessons={lessons}
+            onClick={this.handleChange}
+            current_lesson={this.state.current_lesson}
+          />
         </div>
         <div className="col-8">
-          <Tabs notes={this.state.current_lesson.lessons_note} />
+          <Tabs
+            notes={this.state.current_lesson.lessons_note}
+            quiz={<Quiz />}
+          />
         </div>
       </div>
     );

@@ -52,28 +52,24 @@ export default function SimpleTabs(props) {
     setValue(newValue);
   }
 
-  console.log(props);
   return (
     <div className={classes.root}>
-      <AppBar position="static">
+      <AppBar id="tab_bar" position="static">
         <Tabs
           value={value}
           onChange={handleChange}
           aria-label="simple tabs example"
         >
           <Tab label="Note" {...a11yProps(0)} />
-          <Tab label="Things to Remember" {...a11yProps(1)} />
-          <Tab label="Quiz" {...a11yProps(2)} />
+          <Tab label="Quiz" {...a11yProps(1)} />
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
         {props.notes}
       </TabPanel>
+
       <TabPanel value={value} index={1}>
-        Item Two
-      </TabPanel>
-      <TabPanel value={value} index={2}>
-        Item Three
+        {props.quiz}
       </TabPanel>
     </div>
   );

@@ -7,7 +7,7 @@ import About from "./components/About";
 import Contact from "./components/Contact";
 import Notfound from "./Notfound";
 import School from "./components/school";
-import Subject from "./Subject";
+import Subject from "./components/Subject";
 
 function App() {
   return (

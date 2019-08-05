@@ -32,6 +32,12 @@ export default function SpacingGrid(props) {
                 className={classes.paper}
                 onClick={() => onClick(value.label)}
               >
+                <img
+                  id="button-img"
+                  src="https://img.icons8.com/small/96/000000/school-building.png"
+                  alt=""
+                />
+                <br />
                 {value.label}
               </Paper>
             </Grid>

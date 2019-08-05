@@ -6,7 +6,7 @@ import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
-
+import Quiz from "./quiz";
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
 
@@ -61,15 +61,15 @@ export default function SimpleTabs(props) {
           aria-label="simple tabs example"
         >
           <Tab label="Note" {...a11yProps(0)} />
-          <Tab label="Quiz" {...a11yProps(1)} />
+          <Tab label="Multiple Choice Questions" {...a11yProps(1)} />
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
-        {props.notes}
+        <div id="note_container">{props.notes}</div>
       </TabPanel>
 
       <TabPanel value={value} index={1}>
-        {props.quiz}
+        <Quiz questions={props.questions} current_inde={props.inde} />
       </TabPanel>
     </div>
   );

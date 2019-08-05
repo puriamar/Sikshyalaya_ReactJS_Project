@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import Tabs from "./tabs";
 import List from "./list_group";
-import Quiz from "./quiz";
 
 class Notes extends Component {
   state = {
@@ -14,7 +13,7 @@ class Notes extends Component {
 
   render() {
     const { lessons } = this.props;
-
+    //console.log(lessons[0].questions);
     return (
       <div className="row">
         <div className="col-2">
@@ -28,7 +27,8 @@ class Notes extends Component {
         <div className="col-8">
           <Tabs
             notes={this.state.current_lesson.lessons_note}
-            quiz={<Quiz />}
+            questions={this.state.current_lesson.questions}
+            inde={this.state.inde}
           />
         </div>
       </div>

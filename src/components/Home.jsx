@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import homeimage from "../images/Home_image.jpg";
 import Button from "./Buttons";
-//import { Button, Collapse } from "react-bootstrap";
 
 class Home extends Component {
   state = {

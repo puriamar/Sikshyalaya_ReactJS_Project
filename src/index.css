@@ -30,8 +30,16 @@ code {
   color: white;
   text-align: center;
   font-weight: bolder;
-  font-size: x-large;
+
   cursor: pointer;
+  padding-top: 13px;
+  font-size: 15px;
+}
+
+#button-img {
+  height: 46px;
+
+  margin-bottom: 3px;
 }
 
 #paper:hover {
@@ -53,4 +61,18 @@ li {
 
 #tab_bar {
   background-color: #007bff;
+}
+
+#question_container {
+  background-color: #a8c3e0;
+  padding: 15px;
+}
+
+#note_container {
+  background-color: #a8c3e0;
+  padding: 15px;
+}
+
+#answer_alert {
+  margin-top: 10pt;
 }

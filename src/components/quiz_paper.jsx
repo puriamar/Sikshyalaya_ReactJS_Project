@@ -1,39 +1,66 @@
-import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import Paper from "@material-ui/core/Paper";
+import React, { Component } from "react";
 
-const useStyles = makeStyles(theme => ({
-  root: {
-    padding: theme.spacing(3, 2)
-  }
-}));
-export default function PaperSheet(props) {
-  const classes = useStyles();
+class QuizPaper extends Component {
+  state = {
+    answer: <div id="answer_alert" />
+  };
 
-  return (
-    <div>
-      <Paper className={classes.root}>
-        <h6>{props.question}</h6>
-        <div className="col-4">
-          <ul className="list-group">
-            {props.options.map(option => (
-              <li
-                onClick={() => props.optionSelect(option, props.answer)}
-                key={option}
-                className="list-group-item"
-              >
-                {option}
-              </li>
-            ))}
-          </ul>
+  handleSelect = event => {
+    if (event.currentTarget.value === this.props.answer)
+      this.setState({
+        answer: (
+          <div id="answer_alert" className="alert alert-success" role="alert">
+            Your Answer Is Correct!
+          </div>
+        )
+      });
+    else {
+      this.setState({
+        answer: (
+          <div id="answer_alert" className="alert alert-danger" role="alert">
+            Your Answer Is Incorrect!
+          </div>
+        )
+      });
+    }
+  };
+
+  renderAnswer() {
+    if (this.state.userAnswer === this.props.answer)
+      return (
+        <div class="alert alert-success" role="alert">
+          This is a success alert—check it out!
         </div>
-        <button
-          className="btn btn-primary"
-          onClick={() => props.onNext(props.index)}
-        >
-          Another
-        </button>
-      </Paper>
-    </div>
-  );
+      );
+    else {
+      return (
+        <div class="alert alert-danger" role="alert">
+          This is a success alert—check it out!
+        </div>
+      );
+    }
+  }
+  render() {
+    return (
+      <div id="question_container" className="jumbotron jumbotron-fluid">
+        <div className="container">
+          <h6>{this.props.question}</h6>
+          {this.props.options.map(option => (
+            <p key={option} className="lead">
+              {option}
+            </p>
+          ))}
+          <select onChange={this.handleSelect} className="custom-select">
+            <option>...Select Answer...</option>
+            {this.props.options.map(option => (
+              <option key={option}>{option}</option>
+            ))}
+          </select>
+          {this.state.answer}
+        </div>
+      </div>
+    );
+  }
 }
+
+export default QuizPaper;

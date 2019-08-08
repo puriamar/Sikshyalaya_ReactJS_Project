@@ -13,8 +13,7 @@ class Subject extends Component {
             lessons: [
               {
                 topic: "One",
-                lessons_note:
-                  " 6 Social one The difference between a society and a community comes down to two main characteristics: size and interaction.  A community and a society can be any size that you want.  There isn't a minimum number of people needed for either (as long as you don't take extremes like 2-3 people).  What is generally understood as a key size difference is that a community is smaller than a society. The size factor is of secondary importance, if you ask me.  The level of interaction is more important.  A society could be huge, and span hundreds or thousands of miles.  The population of the United States could be considered a society the American society.Within that society though are many, many smaller communities.",
+                lessons_note: "/one.pdf",
                 questions: [
                   {
                     q:

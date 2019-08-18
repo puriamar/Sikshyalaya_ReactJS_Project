@@ -7,8 +7,6 @@ import Tab from "@material-ui/core/Tab";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
 import Quiz from "./quiz";
-import PDFViewer from "./PDFViewer";
-import PDFJSBackend from "./backend/pdfjs";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -68,13 +66,11 @@ export default function SimpleTabs(props) {
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
-        <div id="note_container">
-          <PDFViewer backend={PDFJSBackend} src={props.notes} />
-        </div>
+        <div id="note_viewer">{props.notes}</div>
       </TabPanel>
 
       <TabPanel value={value} index={1}>
-        <Quiz questions={props.questions} current_inde={props.inde} />
+        <Quiz questions={props.questions} />
       </TabPanel>
     </div>
   );

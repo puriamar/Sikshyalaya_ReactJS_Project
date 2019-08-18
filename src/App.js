@@ -8,6 +8,7 @@ import Contact from "./components/Contact";
 import Notfound from "./Notfound";
 import School from "./components/school";
 import Subject from "./components/Subject";
+import Notes from "./components/Notes";
 
 function App() {
   return (
@@ -19,6 +20,10 @@ function App() {
           <Route path="/registerform" component={RegisterForm} /> */}
 
           <Route path="/Home" component={Home} />
+          <Route
+            path="/School/:name/:grade/:subject/:lesson"
+            component={Notes}
+          />
           <Route path="/School/:name/:grade/:subject" component={Subject} />
           <Route path="/School/:name" component={School} />
           <Route path="/About" component={About} />

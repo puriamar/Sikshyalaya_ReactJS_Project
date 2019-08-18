@@ -69,10 +69,14 @@ li {
 }
 
 #note_container {
-  background-color: #a8c3e0;
+  margin-top: 10pt;
   padding: 15px;
 }
 
 #answer_alert {
   margin-top: 10pt;
+}
+
+#note_viewer {
+  padding-left: 116pt;
 }

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import Tabs from "./tabs";
-import List from "./list_group";
+
+import List from "./lessons_list";
 
 class Notes extends Component {
   state = {
@@ -9,29 +9,29 @@ class Notes extends Component {
 
   handleChange = lesson => {
     this.setState({ current_lesson: lesson });
+    console.log(lesson);
   };
 
   render() {
     const { lessons } = this.props;
-    //console.log(lessons[0].questions);
+    console.log(lessons);
     return (
-      <div className="row">
-        <div className="col-2">
-          <h3>Lessons</h3>
-          <List
-            lessons={lessons}
-            onClick={this.handleChange}
-            current_lesson={this.state.current_lesson}
-          />
+      <React.Fragment>
+        <div className="row">
+          <div className="col">
+            <h3>Lessons</h3>
+            {/* <List lesson={lessons} /> */}
+
+            <List lesson={lessons} onClick={this.props.onClick} />
+
+            {/* <List
+              lessons={lessons}
+              onClick={this.props.onClick}
+              current_lesson={this.state.current_lesson}
+            /> */}
+          </div>
         </div>
-        <div className="col-8">
-          <Tabs
-            notes={this.state.current_lesson.lessons_note}
-            questions={this.state.current_lesson.questions}
-            inde={this.state.inde}
-          />
-        </div>
-      </div>
+      </React.Fragment>
     );
   }
 }

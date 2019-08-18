@@ -19,7 +19,7 @@ export default class PDFViewer extends React.Component {
       <div
         ref={this.viewerRef}
         id="viewer"
-        // style={{ width: "100%", height: "700px" }}
+        style={{ width: " 750px", height: "750px" }}
       />
     );
   }

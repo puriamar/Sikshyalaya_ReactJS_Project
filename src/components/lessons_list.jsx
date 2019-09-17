@@ -8,8 +8,8 @@ const useStyles = makeStyles(theme => ({
     flexGrow: 1
   },
   paper: {
-    height: 120,
-    width: 120
+    height: 130,
+    width: 130
   },
   control: {
     padding: theme.spacing(2)
